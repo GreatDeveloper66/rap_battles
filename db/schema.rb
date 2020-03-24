@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_173151) do
+ActiveRecord::Schema.define(version: 2020_03_24_215702) do
 
   create_table "rapbattles", force: :cascade do |t|
     t.integer "challenger_id"
-    t.integer "challenge_id"
     t.integer "venue_id"
     t.integer "challenger_points"
     t.integer "challengee_points"
+    t.string "challengee_id"
   end
 
   create_table "towns", force: :cascade do |t|
