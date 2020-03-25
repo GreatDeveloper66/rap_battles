@@ -3,9 +3,9 @@ class User < ApplicationRecord
   has_many :challengees, through: :challenged_users
   has_many :challenging_users, foreign_key: 'challengee_id', class_name: 'Rapbattle'
   has_many :challengers, through: :challenging_users
-
   has_secure_password
-  validates :username, uniqueness: { case_sensitive: false }
+
+  validates_uniqueness_of :username
 
   def challenge(another_user, fight_at_venue)
 
