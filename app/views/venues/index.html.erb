@@ -1,0 +1,9 @@
+<h1>All of the Venues available for Rap Battles</h1>
+<br>
+<br>
+<% @venues.each do |v| %>
+<p><%= v.name %></p>
+<p><%= v.town.name %></p>
+<br>
+<br>
+<% end %>
