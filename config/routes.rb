@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :towns, only: [:show,:index,:new,:create]
   resources :trashtalks, only: [:show, :index, :new, :create]
   resources :rapbattles, only: [:show,:index,:new,:create]
-
+  get '/', to: 'sessions#home', as: 'home'
 end
