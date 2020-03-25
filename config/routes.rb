@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :towns, only: [:show,:index,:new,:create]
   resources :trashtalks, only: [:show, :index, :new, :create]
   resources :rapbattles, only: [:show,:index,:new,:create]
-  resources :sessions, only: [:new,:show,:index,:new,:create]
+  resources :sessions, only: [:show,:index,:new,:create]
   get '/', to: 'sessions#home', as: 'home'
   get '/rapbattles', to: 'rapbattles#home', as: 'rapbattles_home'
+  delete "/logout", to: "sessions#destroy"
+  get "/login", to: "sessions#new"
 end
