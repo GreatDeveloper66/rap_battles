@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :rapbattles, only: [:show,:index,:new,:create]
   resources :sessions, only: [:new,:show,:index,:new,:create]
   get '/', to: 'sessions#home', as: 'home'
+  get '/rapbattles', to: 'rapbattles#home', as: 'rapbattles_home'
 end
