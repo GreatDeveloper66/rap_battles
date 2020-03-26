@@ -60,3 +60,14 @@ detroit.addVenue("Saint Andrews Hall",45)
 trash.each do |t|
   Trashtalk.create(snippet:t[0],points:t[1])
 end
+allusers = User.all.to_a
+limit = allusers.length
+firstVenue = Venue.first
+lastVenue = Venue.last
+for n in 1...limit do
+  allusers[0].challenge(allusers[n],firstVenue)
+end
+
+for n in 1...limit do
+  allusers[0].challenge(allusers[n],lastVenue)
+end
