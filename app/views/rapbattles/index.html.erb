@@ -1,0 +1,27 @@
+<h1>Previous Rap Battles</h1>
+
+<h2>Total number of trashtalks so far</h2>
+<%=Rapbattle.total_trashtalks%>
+
+<h2>Most popular trashtalk is</h2>
+
+<%= Rapbattle.most_popular_trash %>
+
+<% @rapbattles.to_a.each do |r| %>
+<h2>Challenger: </h2>
+<%= r.challenger.name %>
+<h2>Challenger points: </h2>
+<%=r.challenger_points%>
+<h2>Challengee: </h2>
+<%=r.challengee.name %>
+<h2>Challengee points: </h2>
+<%=r.challengee_points %>
+<br>
+<br>
+<p>Winner: </p>
+<%= r.winner.name %>
+
+
+<% end %>
+
+<%= link_to "Back to Home", users_path %>

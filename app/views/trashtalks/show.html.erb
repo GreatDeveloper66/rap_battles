@@ -1,0 +1,10 @@
+<h1>Delete this insult</h1>
+<%=@trashtalk.snippet%>
+<br>
+<br>
+<%=@trashtalk.points%>
+<br>
+<br>
+<%= link_to "Delete this!", trashtalk_path(@trashtalk), method: :delete, data: {confirm: "Are you sure?"} %>
+<br>
+<br>

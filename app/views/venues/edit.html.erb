@@ -1,0 +1,8 @@
+<h1>Edit your venue</h1>
+<%= form_for @venue do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :points %>
+<%= f.text_field :points %>
+<%= f.submit %>
+<% end %>

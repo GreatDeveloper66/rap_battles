@@ -1,0 +1,22 @@
+<h1>Welcome to Rap Battles</h1>
+<h2>Trash talk your favorite rapper</h2>
+<h2>Welcome <%=User.find_by(id: session[:user_id]).name %></h2>
+
+<%= link_to "Log Out", logout_path, method: :delete %>
+<br>
+<br>
+<%= link_to "See Venues", venues_path %>
+<br>
+<br>
+<%= link_to "See Cities", towns_path %>
+<br>
+<br>
+<%= link_to "See Trashtalks", trashtalks_path %>
+<br>
+<br>
+<%= link_to "See Leaders Board", rapbattles_path %>
+<br>
+<br>
+<%= link_to "Battle a Rapper", new_rapbattle_path %>
+<br>
+<br>

@@ -1,0 +1,12 @@
+<h1>All of the Venues available for Rap Battles</h1>
+<br>
+<br>
+<% @venues.each do |v| %>
+<p><%= v.name %></p>
+<p><%= v.town.name %></p>
+<p><%= link_to "Edit this venue", edit_venue_path(v) %>
+<br>
+<br>
+<% end %>
+
+<%= link_to "Back to Users", users_path %>

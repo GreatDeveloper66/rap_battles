@@ -3,6 +3,7 @@ class CreateVenues < ActiveRecord::Migration[6.0]
     create_table :venues do |t|
       t.string :name
       t.integer :points
+      t.integer :town_id
     end
   end
 end

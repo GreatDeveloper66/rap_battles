@@ -1,0 +1,16 @@
+<h1>List of all trashtalking</h1>
+<br>
+<% @trashtalks.each do |t| %>
+<%= t.snippet %>
+<br>
+<%= link_to "Edit this insult", edit_trashtalk_path(t) %>
+<br>
+<br>
+<%= link_to "Delete this insult", trashtalk_path(t)%>
+<br>
+<br>
+<% end %>
+<%= link_to "Create a new insult", new_trashtalk_path %>
+<br>
+<br>
+<%= link_to "Back to Home", users_path %>
