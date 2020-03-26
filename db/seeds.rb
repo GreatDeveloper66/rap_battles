@@ -25,10 +25,10 @@ trash = [["You went to a private school",3],
           ["You mama is so fat when she got in the scale it said, I need your weight not your zip code",7],
           ["You mamma is so stupid she returned a donut because it had a hole in it",8]
         ]
-towns = [["Chicago",5,"/app/assets/images/chicago.jpg"],
-         ["New York",10,"/app/assets/images/newyork.jpg"],
-         ["Los Angeles",15,"/app/assets/images/losangeles.jpg"],
-         ["Detroit",20,"/app/assets/images/detroit.jpg"]
+towns = [["Chicago",5,"chicago.jpg"],
+         ["New York",10,"newyork.jpg"],
+         ["Los Angeles",15,"losangeles.jpg"],
+         ["Detroit",20,"detroit.jpg"]
          ]
 
 def randomString
@@ -48,14 +48,14 @@ newyork = Town.all.to_a[1]
 losangeles = Town.all.to_a[2]
 detroit = Town.all.to_a[3]
 
-chicago.addVenue("Apollo Theatre",30)
-chicago.addVenue("Chicago Theatre",20)
-newyork.addVenue("Madison Square Garden",15)
-newyork.addVenue("Radio City Music Hall",20)
-losangeles.addVenue("Rose Bowl",11)
-losangeles.addVenue("Hollywood Bowl",22)
-detroit.addVenue("Filmore Detroit",55)
-detroit.addVenue("Saint Andrews Hall",45)
+chicago.addVenue("Apollo Theatre",30,"Apollo.jpg")
+chicago.addVenue("Chicago Theatre",20,"chicago.jpg")
+newyork.addVenue("Madison Square Garden",15,"Madison_Square_Garden.jpg")
+newyork.addVenue("Radio City Music Hall",20,"Radio_City.jpg")
+losangeles.addVenue("Rose Bowl",11,"Rose_Bowl.jpg")
+losangeles.addVenue("Hollywood Bowl",22,"Hollywood_Bowl.jpg")
+detroit.addVenue("Filmore Detroit",55,"Filmore_Detroit.jpg")
+detroit.addVenue("Saint Andrews Hall",45,"Saint_Andrews.jpg")
 
 trash.each do |t|
   Trashtalk.create(snippet:t[0],points:t[1])

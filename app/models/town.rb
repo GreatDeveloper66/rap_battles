@@ -1,8 +1,8 @@
 class Town < ApplicationRecord
   has_many :venues
-  
-  def addVenue(name,points)
+
+  def addVenue(name,points,imgurl)
     town_id = self.id
-    Venue.create(name: name,points:points,town_id: town_id)
+    Venue.create(name: name,points:points,town_id: town_id,imgurl: imgurl )
   end
 end

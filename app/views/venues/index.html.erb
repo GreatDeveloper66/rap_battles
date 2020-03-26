@@ -6,7 +6,9 @@
 <% @venues.each do |v| %>
 <p><%= v.name %></p>
 <p><%= v.town.name %></p>
-<p><%= link_to "Edit this venue", edit_venue_path(v) %>
+
+<%=image_tag("#{v.imgurl}") %>
+<p><%= link_to "Edit this venue", edit_venue_path(v) %></p>
 <br>
 <br>
 <% end %>

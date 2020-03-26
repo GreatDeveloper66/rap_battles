@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_215702) do
+ActiveRecord::Schema.define(version: 2020_03_26_220531) do
 
   create_table "rapbattles", force: :cascade do |t|
     t.integer "challenger_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_24_215702) do
     t.string "name"
     t.integer "points"
     t.integer "town_id"
+    t.string "imgurl"
   end
 
 end
