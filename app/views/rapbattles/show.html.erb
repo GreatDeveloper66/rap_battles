@@ -1,1 +1,24 @@
 <h1>RapBattle Outcome</h1>
+<br>
+<br>
+<h2>Challenger: </h2>
+
+<%= @challenger.name %>
+<h2>Challenger points: </h2>
+<%= @challenger_points %>
+
+<br>
+<br>
+<h2>Challengee: </h2>
+<%=@challengee.name %>
+<h2>Challenger points: </h2>
+<%= @challengee_points %>
+<br>
+<br>
+<p>Winner of this round was: </p>
+<br>
+<% if @challengee_points > @challenger_points %>
+  <%=@challengee.name%>
+<% else %>
+  <%=@challenger.name%>
+<% end %>
