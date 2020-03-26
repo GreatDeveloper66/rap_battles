@@ -7,33 +7,17 @@
     <h1>Battle a Rapper <%=User.find_by(id:session[:user_id]).name%></h1>
   </div>
   <div class="five wide column"></div>
+  <div class="five wide column"></div>
+  <div class="six wide column">
+
+    <%= form_for @rapbattle do |f| %>
+    <%=f.label 'Pick Venue' %>
+    <%=f.collection_select('venue_id',@venues,'id','name')%>
+    <%=f.label 'Pick Rapper' %>
+    <%=f.collection_select('id',@rappers,'id','name')%>
+
+    <%=f.submit%>
+    <%end%>
+  </div>
+  <div class="five wide column"></div>
 </div>
-
-
-<br>
-<br>
-<h2>Venues available</h2>
-<%@venues.each do |v|%>
-<%=v.name%>
-<%end%>
-<br>
-<br>
-<h2>Rappers available</h2>
-<%@rappers.each do |r|%>
-<%=r.name%>
-<%end%>
-<br>
-<br>
-
-<%= form_for @rapbattle do |f| %>
-<%=f.label 'Pick Venue' %>
-<%=f.collection_select('venue_id',@venues,'id','name')%>
-<%=f.label 'Pick Rapper' %>
-<%=f.collection_select('id',@rappers,'id','name')%>
-
-<%=f.submit%>
-<%end%>
-
-
-
-<%= link_to "Back to Home", users_path %>
