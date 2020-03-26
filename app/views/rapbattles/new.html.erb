@@ -1,5 +1,19 @@
 
-<h1>Battle a Rapper</h1>
+<h1>Battle a Rapper <%=User.find_by(id:session[:user_id]).name%></h1>
 <br>
 <br>
+<h2>Venues available</h2>
+<%@venues.each do |v|%>
+<%=v.name%>
+<%end%>
+<br>
+<br>
+<h2>Rappers available</h2>
+<%@rappers.each do |r|%>
+<%=r.name%>
+<%end%>
+<br>
+<br>
+
+
 <%= link_to "Back to Home", users_path %>
