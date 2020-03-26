@@ -13,6 +13,7 @@ class TrashtalksController < ApplicationController
     @trashtalk = Trashtalk.find_by(id: params[:id])
   end
   def update
+    
   end
   private
   def trashtalk_params
