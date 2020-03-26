@@ -1,13 +1,23 @@
-<h1>Login</h1>
+<div class="ui grid">
+  <div class="four wide column">
+  </div>
+  <div class="four wide column">
+    <form class="ui form">
+    <h1>Login</h1>
 
-<%= flash[:error] %>
+    <%= flash[:error] %>
 
-<%= form_with url: "/sessions" do %>
-  Username
-  <%= text_field_tag :username %>
-  Password
-  <%= password_field_tag :password %>
-  <%= submit_tag 'Log In' %>
-<% end %>
+    <%= form_with url: "/sessions" do %>
+      Username
+      <%= text_field_tag :username %>
+      Password
+      <%= password_field_tag :password %>
+      <%= submit_tag 'Log In' %>
+    <% end %>
 
-<button><%= link_to 'Back',home_path %></button>
+    <button><%= link_to 'Back',home_path %></button>
+    </form>
+  </div>
+  <div class="four wide column">
+  </div>
+</div>
