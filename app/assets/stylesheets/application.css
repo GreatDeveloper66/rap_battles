@@ -16,7 +16,8 @@
 
  body {
    background-image:url('rap_background_alt.jpg');
-   background-size: contain;
+   background-size: cover;
    background-position: center;
+   background-repeat: none;
    color: white;
  }
