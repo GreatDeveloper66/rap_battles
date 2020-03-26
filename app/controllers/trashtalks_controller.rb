@@ -6,6 +6,9 @@ class TrashtalksController < ApplicationController
     Trashtalk.create(trashtalk_params)
     redirect_to trashtalks_path
   end
+  def show
+    @trashtalk = Trashtalk.find_by(params[:id])
+  end
   def index
     @trashtalks = Trashtalk.all
   end
@@ -20,6 +23,10 @@ class TrashtalksController < ApplicationController
       @trashtalk = Trashtalk.find_by(id: params[:id])
       render :edit
     end
+  end
+  def destroy
+    Trashtalk.destroy(params[:id])
+    redirect_to trashtalks_path
   end
   private
   def trashtalk_params
