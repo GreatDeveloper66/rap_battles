@@ -1,7 +1,15 @@
 <%= render partial: "layouts/menu" %>
 
 
-<h1>Battle a Rapper <%=User.find_by(id:session[:user_id]).name%></h1>
+<div class="ui grid">
+  <div class="five wide column"></div>
+  <div class="six wide column">
+    <h1>Battle a Rapper <%=User.find_by(id:session[:user_id]).name%></h1>
+  </div>
+  <div class="five wide column"></div>
+</div>
+
+
 <br>
 <br>
 <h2>Venues available</h2>
