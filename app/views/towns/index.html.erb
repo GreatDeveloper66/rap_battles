@@ -1,19 +1,25 @@
 <%= render partial: "layouts/menu" %>
+<div class="ui grid">
+  <div class="three wide column">
+  </div>
+  <div class="ten wide column">
+    <h1>All of the Towns available for Rap Battles</h1>
+  </div>
+  <div class="three wide column">
+  </div>
 
 
-<h1>All of the Towns available for Rap Battles</h1>
-<br>
-<br>
-<% @towns.each do |t| %>
-<p>City:</p>
-<p><%= t.name %></p>
-<h2>Venues for this city</h2>
-<% t.venues.each do |v| %>
-  <p><%= v.name %></p>
-<% end %>
-<br>
-<br>
-<% end %>
-<br>
-<br>
-<%= link_to "Back to Users", users_path %>
+  <% @towns.each do |t| %>
+    <div class="eight wide column">
+    <p>City:</p>
+    <p><%= t.name %></p>
+    <%=image_tag("Cities/#{t.imgurl}") %>
+    <%=t.imgurl%>
+    <h2>Venues for this city</h2>
+    <% t.venues.each do |v| %>
+      <p><%= v.name %></p>
+    <% end %>
+    </div>
+  <% end %>
+
+</div>
