@@ -1,0 +1,26 @@
+<div class="ui menu">
+  <div class="header item">
+    Welcome to Rap Battles
+  </div>
+  <a class="item">
+    <%= link_to "See Venues", venues_path %>
+  </a>
+  <a class="item">
+    <%= link_to "See Cities", towns_path %>
+  </a>
+  <a class="item">
+    <%= link_to "See Trashtalks", trashtalks_path %>
+  </a>
+  <a class="item">
+    <%= link_to "See Rapbattles", rapbattles_path %>
+  </a>
+  <a class="item">
+    <%= link_to "Battle a Rapper", new_rapbattle_path %>
+  </a>
+  <a class="item">
+    <%= link_to 'Back',home_path %>
+  </a>
+  <a class="item">
+    <%= link_to "Log Out", logout_path, method: :delete %>
+  </a>
+</div>
