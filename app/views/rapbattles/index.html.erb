@@ -1,5 +1,8 @@
 <h1>Previous Rap Battles</h1>
 
+<h2>Total number of trashtalks so far</h2>
+<%=Rapbattle.total_trashtalks%>
+
 <% @rapbattles.to_a.each do |r| %>
 <h2>Challenger: </h2>
 <%= r.challenger.name %>
@@ -12,11 +15,8 @@
 <br>
 <br>
 <p>Winner: </p>
-<% if r.challenger_points > r.challengee_points %>
-<%=r.challenger.name%>
-<% else %>
-<%=r.challengee.name%>
-<% end %>
+<%= r.winner.name %>
+
 
 <% end %>
 
