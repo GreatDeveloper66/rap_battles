@@ -10,6 +10,7 @@ class TrashtalksController < ApplicationController
     @trashtalks = Trashtalk.all
   end
   def edit
+    @trashtalk = Trashtalk.find_by(id: params[:id])
   end
   def update
   end
