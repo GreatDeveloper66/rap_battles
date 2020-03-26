@@ -1,5 +1,6 @@
 class TrashtalksController < ApplicationController
   def new
+    @trashtalk = Trashtalk.new
   end
   def create
   end

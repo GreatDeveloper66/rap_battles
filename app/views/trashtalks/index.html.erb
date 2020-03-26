@@ -1,4 +1,8 @@
 <h1>List of all trashtalking</h1>
-<%= @trashtalks.each do |t| %>
+<br>
+<% @trashtalks.each do |t| %>
 <%= t.snippet %>
+<br>
+<br>
 <% end %>
+<%= link_to "Create a new insult", new_trashtalk_path %>
