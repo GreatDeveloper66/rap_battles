@@ -19,7 +19,7 @@ class User < ApplicationRecord
     challengee_points = challengee_array.reduce(0) { |sum,c| sum + c.points }
 
 
-    Rapbattle.create(
+    newrapbattle = Rapbattle.create(
       challenger_id: self.id,
       challengee_id: another_user.id,
       venue_id: fight_at_venue.id,
@@ -28,7 +28,8 @@ class User < ApplicationRecord
     )
 
     (challenger_array + challengee_array).each do |c|
-      Trashbattle.create(trashtalk_id: c.id, rapbattle_id: self.id)
+      Trashbattle.create(trashtalk_id: c.id, rapbattle_id: newrapbattle.id)
     end
+    newrapbattle.id
   end
 end
