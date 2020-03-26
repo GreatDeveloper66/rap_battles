@@ -1,7 +1,23 @@
-<h1>Leaders Board</h1>
-<%= link_to "Back to Home", users_path %>
-<% @users.each do |u| %>
+<h1>Previous Rap Battles</h1>
+
+<% @rapbattles.to_a.each do |r| %>
+<h2>Challenger: </h2>
+<%= r.challenger.name %>
+<h2>Challenger points: </h2>
+<%=r.challenger_points%>
+<h2>Challengee: </h2>
+<%=r.challengee.name %>
+<h2>Challengee points: </h2>
+<%=r.challengee_points %>
 <br>
-<%=u.name %>
 <br>
+<p>Winner: </p>
+<% if r.challenger_points > r.challengee_points %>
+<%=r.challenger.name%>
+<% else %>
+<%=r.challengee.name%>
 <% end %>
+
+<% end %>
+
+<%= link_to "Back to Home", users_path %>
