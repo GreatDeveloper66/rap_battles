@@ -15,5 +15,15 @@
 <br>
 <br>
 
+<%= form_for @rapbattle do |f| %>
+<%=f.label 'Pick Venue' %>
+<%=f.collection_select('venue_id',@venues,'id','name')%>
+<%=f.label 'Pick Rapper' %>
+<%=f.collection_select('id',@rappers,'id','name')%>
+
+<%=f.submit%>
+<%end%>
+
+
 
 <%= link_to "Back to Home", users_path %>
