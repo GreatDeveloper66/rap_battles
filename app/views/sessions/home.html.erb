@@ -1,7 +1,13 @@
-<h1>Are you a new user?</h1>
-<br>
-<br>
-<button><%= link_to 'Yes', new_user_path %></button>
-<br>
-<br>
-<button><%= link_to 'No', new_session_path %></button>
+<div class="ui two column centered grid">
+  <div class="column">
+    <h1 class="centered">Are you a new user?</h1>
+  </div>
+  <div class="four column centered row">
+    <div class="column">
+      <button class="ui green button"><%= link_to 'Yes', new_user_path %></button>
+    </div>
+    <div class="column">
+      <button class="ui button"><%= link_to 'No', new_session_path %></button>
+    </div>
+  </div>
+</div>
