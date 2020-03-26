@@ -1,2 +1,7 @@
 <h1>Leaders Board</h1>
 <%= link_to "Back to Home", users_path %>
+<% @users.each do |u| %>
+<br>
+<%=u.name %>
+<br>
+<% end %>

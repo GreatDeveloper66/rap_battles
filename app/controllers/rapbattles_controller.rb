@@ -34,6 +34,7 @@ class RapbattlesController < ApplicationController
     redirect_to rapbattle_path(@newrapbattle)
   end
   def index
+    @users = User.all.to_a
   end
   private
   def rapbattle_params
