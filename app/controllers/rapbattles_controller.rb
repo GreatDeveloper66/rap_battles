@@ -7,6 +7,12 @@ class RapbattlesController < ApplicationController
     @challengee = User.find_by(id: @newrapbattle[:challengee_id])
     @challengee_points = @newrapbattle[:challengee_points]
     @challenger_points = @newrapbattle[:challenger_points]
+    trasharray = Trashbattle.all.to_a.select do |t|
+      t.rapbattle_id == params[:id].to_i
+    end
+    insults = trasharray.map { |t| Trashtalk.find_by(id: t.trashtalk_id).snippet}
+    @challenger_insults = [insults[0],insults[2],insults[4],insults[6],insults[8]]
+    @challengee_insults = [insults[1],insults[3],insults[5],insults[7],insults[9]]
   end
 
   def new
@@ -16,7 +22,7 @@ class RapbattlesController < ApplicationController
       u.id != session[:user_id]
     end
   end
-  
+
   def create
     @current_user = User.find_by(id: session[:user_id])
     venue_id = params[:rapbattle][:venue_id]
