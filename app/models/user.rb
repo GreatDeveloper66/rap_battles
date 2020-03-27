@@ -11,7 +11,9 @@ class User < ApplicationRecord
     challenger_array = Trashtalk.sample_trashtalk
     challengee_array = Trashtalk.sample_trashtalk
     challenger_points = challenger_array.reduce(0) { |sum,c| sum + c.points }
+                        + fight_at_venue.points
     challengee_points = challengee_array.reduce(0) { |sum,c| sum + c.points }
+                        + fight_at_venue.town.points
 
     newrapbattle = Rapbattle.create(
       challenger_id: self.id,
