@@ -8,13 +8,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
 
   def challenge(another_user, fight_at_venue)
-
-    challenger_array = []
-    challengee_array = []
-    5.times do
-      challenger_array << Trashtalk.all.to_a.sample
-      challengee_array << Trashtalk.all.to_a.sample
-    end
+    challenger_array = Trashtalk.sample_trashtalk
+    challengee_array = Trashtalk.sample_trashtalk
     challenger_points = challenger_array.reduce(0) { |sum,c| sum + c.points }
     challengee_points = challengee_array.reduce(0) { |sum,c| sum + c.points }
 
