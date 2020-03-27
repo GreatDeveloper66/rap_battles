@@ -3,7 +3,14 @@ class Trashtalk < ApplicationRecord
   has_many :rapbattles, through: :trashbattles
 
   def self.sample_trashtalk
-    [self.snippet,self.snippet,self.snippet,self.snippet,self.snippet]
+    trashtalks = []
+    while trashtalks.length < 5 do
+      s = self.snippet
+      if !trashtalks.include? s
+        trashtalks << s
+      end
+    end
+    trashtalks
   end
   def self.snippet
     Trashtalk.all.to_a.sample
