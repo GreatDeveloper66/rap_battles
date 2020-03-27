@@ -1,4 +1,5 @@
 class VenuesController < ApplicationController
+  before_action :require_login
   def show
   end
   def index
@@ -22,5 +23,8 @@ class VenuesController < ApplicationController
   private
     def venue_params
       params.require(:venue).permit(:name,:points)
+    end
+    def require_login
+      return head(:forbidden) unless session.include? :user_id
     end
 end

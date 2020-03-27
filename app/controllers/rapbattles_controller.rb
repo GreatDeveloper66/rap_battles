@@ -1,4 +1,6 @@
 class RapbattlesController < ApplicationController
+  before_action :require_login
+
   def home
   end
   def show
@@ -39,5 +41,8 @@ class RapbattlesController < ApplicationController
   private
   def rapbattle_params
     params.require(:rapbattle).permit()
+  end
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 end
