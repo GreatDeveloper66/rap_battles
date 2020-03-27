@@ -13,6 +13,17 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+  def update
+    @user = User.find_by(id: params[:id])
+    if User.update(user_params)
+      redirect_to users_path
+    else
+      render :edit
+    end
+  end
   def index
   end
   private
