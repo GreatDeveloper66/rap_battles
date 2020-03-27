@@ -1,16 +1,39 @@
-<h1>List of all trashtalking</h1>
-<br>
-<% @trashtalks.each do |t| %>
-<%= t.snippet %>
-<br>
-<%= link_to "Edit this insult", edit_trashtalk_path(t) %>
-<br>
-<br>
-<%= link_to "Delete this insult", trashtalk_path(t)%>
-<br>
-<br>
+<%= render partial: "layouts/menu" %>
+
+<div class="ui grid">
+  <div class="three wide column">
+  </div>
+  <div class="ten wide column">
+    <h1>Trashtalk List</h1>
+  </div>
+  <div class="three wide column">
+  </div>
+
+  <div class="three wide column">
+  </div>
+  <div class="ten wide column">
+    <h3><%= link_to "Create a new insult", new_trashtalk_path %></h3>
+  </div>
+  <div class="three wide column">
+  </div>
+
+  <% @trashtalks.each do |t| %>
+  <div class = "three wide column">
+    </div>
+    <div class="ten wide column">
+  <br>
+  <h2><%= t.snippet %></h2>
+
+  <p>
+  <%= link_to "Edit this insult", edit_trashtalk_path(t) %>
+  </p>
+  <br>
+  <p>
+  <%= link_to "Delete this insult", trashtalk_path(t)%>
+  </p>
+
+  <br>
 <% end %>
-<%= link_to "Create a new insult", new_trashtalk_path %>
-<br>
-<br>
-<%= link_to "Back to Home", users_path %>
+
+
+</div>

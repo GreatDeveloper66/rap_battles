@@ -1,43 +1,59 @@
-<h1>RapBattle Outcome</h1>
-<br>
-<br>
-<h2>Challenger: </h2>
+<%= render partial: "layouts/menu" %>
 
-<%= @challenger.name %>
-<h2>Challenger points: </h2>
-<%= @challenger_points %>
+<div class="ui grid">
 
-<br>
-<br>
-<h2>Challenger's insults</h2>
-<br>
-<br>
-<% @challenger_insults.each do |c| %>
-<br>
-<%= c %>
-<% end %>
+  <div class="five wide column">
+  </div>
+  <div class="six wide column">
+    <h1>RapBattle Outcome</h1>
+  </div>
+  <div class="five wide column">
+  </div>
 
-<br>
-<br>
-<h2>Challengee: </h2>
-<%=@challengee.name %>
-<h2>Challenger points: </h2>
-<%= @challengee_points %>
-<br>
-<br>
-<h2>Challengee's insults</h2>
-<br>
-<br>
-<% @challengee_insults.each do |c| %>
-<br>
-<%= c %>
-<% end %>
-<br>
-<br>
-<p>Winner of this round was: </p>
-<br>
-<% if @challengee_points > @challenger_points %>
-  <%=@challengee.name%>
-<% else %>
-  <%=@challenger.name%>
-<% end %>
+  <div class="three wide column">
+  </div>
+  <div class="five wide column">
+    <h2>Challenger: </h2>
+
+    <p><%= @challenger.name %></p>
+    <%=image_tag("profiles/#{@challenger.imgurl}") %>
+    <h2>Challenger points: </h2>
+    <p><%= @challenger_points %></p>
+  </div>
+  <div class="five wide column">
+    <h2>Challengee: </h2>
+    <p><%=@challengee.name %></p>
+    <%=image_tag("profiles/#{@challengee.imgurl}") %>
+    <h2>Challenger points: </h2>
+    <p><%= @challengee_points %></p>
+  </div>
+  <div class="three wide column">
+  </div>
+
+
+
+  <div class="three wide column">
+  </div>
+  <div class="five wide column">
+    <h2>Challenger's TrashTalk</h2>
+    <% @challenger_insults.each do |c| %>
+    <p><%= c %></p>
+    <% end %>
+  </div>
+  <div class="five wide column">
+    <h2>Challengee's TrashTalk</h2>
+    <% @challengee_insults.each do |c| %>
+    <p><%= c %></p>
+    <% end %>
+  </div>
+  <div class="three wide column">
+  </div>
+
+  <div class="three wide column">
+  </div>
+  <div class="six wide column">
+    <h3>Winner of this round was: <%= @newrapbattle.winner.name %>  </h3>
+  </div>
+  <div class="three wide column">
+  </div>
+</div>

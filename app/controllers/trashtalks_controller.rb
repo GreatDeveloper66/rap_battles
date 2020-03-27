@@ -1,4 +1,5 @@
 class TrashtalksController < ApplicationController
+  before_action :require_login
   def new
     @trashtalk = Trashtalk.new
   end
@@ -31,5 +32,8 @@ class TrashtalksController < ApplicationController
   private
   def trashtalk_params
     params.require(:trashtalk).permit(:snippet,:points)
+  end
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 end

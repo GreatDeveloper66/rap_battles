@@ -1,12 +1,27 @@
-<h1>All of the Venues available for Rap Battles</h1>
-<br>
-<br>
+<%= render partial: "layouts/menu" %>
+<div class="ui grid">
+  <div class="three wide column">
+  </div>
+  <div class="ten wide column">
+    <h1>All of the Venues available for Rap Battles</h1>
+  </div>
+  <div class="three wide column">
+  </div>
+
+
+
 <% @venues.each do |v| %>
-<p><%= v.name %></p>
-<p><%= v.town.name %></p>
-<p><%= link_to "Edit this venue", edit_venue_path(v) %>
+<div class="eight wide column">
+<p><%= v.name %>: <%= v.town.name %></p>
+
+
+<%=image_tag("#{v.imgurl}") %>
+<p><%= link_to "Edit this venue", edit_venue_path(v) %></p>
 <br>
 <br>
+</div>
 <% end %>
 
+
 <%= link_to "Back to Users", users_path %>
+</div>
