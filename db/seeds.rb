@@ -11,7 +11,15 @@ Town.destroy_all
 Rapbattle.destroy_all
 Trashbattle.destroy_all
 Trashtalk.destroy_all
-rappers = ["Snoop Dog","Ice Cube","Vanilla Ice","Tone Loc","Jay-Z","Sir Mix-a-Lot","LL Cool J","Eminem"]
+rappers = [["Snoop Dog","SnoopDog.jpg"],
+            ["Ice Cube","IceCube.jpg"],
+            ["Vanilla Ice","VanillaIce.jpg"],
+            ["Tone Loc","ToneLoc.jpg"],
+            ["Jay-Z","JayZ.jpg"],
+            ["Sir Mix-a-Lot","SirMixALot.jpg"],
+            ["LL Cool J","LLCoolJ.jpg"],
+            ["Eminem","Eminem.jpg"]]
+
 trash = [["You went to a private school",3],
           ["You live in a trailer park",5],
           ["You mamma is so fat Dora can't explore her",7],
@@ -34,7 +42,9 @@ trash = [["You went to a private school",3],
           ["You're so ugly that your portraits hang themselves",7],
           ["You're so stupid that you climbed a glass wall to see what was on the other side",9],
           ["You're so hairy that when you come out of the shower it is like Gorillas in the mist",6],
-          ["You're so hairy that when you went to the zoo they locked you in a cage",8]
+          ["You're so hairy that when you went to the zoo they locked you in a cage",8],
+          ["Your birth certificate is an apology from the condom factory", 9],
+          ["Mirrors can't talk, lucky for you they can't laugh either", 7]
         ]
 towns = [["Chicago",5,"chicago.jpg"],
          ["New York",10,"newyork.jpg"],
@@ -47,7 +57,7 @@ def randomString
 end
 
 rappers.each do |n|
-  User.create(name: n, email:"#{n}@gmail.com",username: n,password_digest: randomString)
+  User.create(name: n[0], email:"#{n[0]}@gmail.com",username: n[0], imgurl:n[1], password_digest: randomString)
 end
 
 towns.each do |t|

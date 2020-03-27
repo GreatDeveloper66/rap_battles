@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_26_220531) do
+ActiveRecord::Schema.define(version: 2020_03_27_095912) do
 
   create_table "rapbattles", force: :cascade do |t|
     t.integer "challenger_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_26_220531) do
     t.string "email"
     t.string "username"
     t.string "password_digest"
+    t.string "imgurl", default: "blank_person.jpg"
   end
 
   create_table "venues", force: :cascade do |t|
