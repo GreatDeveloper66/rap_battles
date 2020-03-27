@@ -3,6 +3,9 @@
     Welcome to Rap Battles
   </div>
   <a class="item">
+    <%= link_to 'Home', users_path %>
+  </a>
+  <a class="item">
     <%= link_to "See Venues", venues_path %>
   </a>
   <a class="item">
@@ -16,9 +19,6 @@
   </a>
   <a class="item">
     <%= link_to "Battle a Rapper", new_rapbattle_path %>
-  </a>
-  <a class="item">
-    <%= link_to 'Back',users_path %>
   </a>
   <a class="item">
     <%= link_to "Log Out", logout_path, method: :delete %>
