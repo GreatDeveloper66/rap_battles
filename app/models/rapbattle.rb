@@ -16,6 +16,16 @@ class Rapbattle < ApplicationRecord
     self.all.reduce(0) { |sum,r| sum + r.trashtalks.to_a.count }
   end
 
+  def find_insults
+    trasharray = Trashbattle.find_for_battle(self)
+    insults = trasharray.map{ |t| t.snippet }
+
+    {
+      challenger_insults: [insults[0],insults[2],insults[4],insults[6],insults[8]],
+      challengee_insults: [insults[1],insults[3],insults[5],insults[7],insults[9]]
+    }
+  end
+
   def self.most_popular_trash
     trashes = self.all.map{ |s| s.trashtalks.to_a }
     trashes = trashes.flatten

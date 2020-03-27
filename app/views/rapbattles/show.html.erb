@@ -18,14 +18,14 @@
     <p><%= @challenger.name %></p>
     <%=image_tag("profiles/#{@challenger.imgurl}") %>
     <h2>Challenger points: </h2>
-    <p><%= @challenger_points %></p>
+    <p><%= @newrapbattle.challenger_points %></p>
   </div>
   <div class="five wide column">
     <h2>Challengee: </h2>
     <p><%=@challengee.name %></p>
     <%=image_tag("profiles/#{@challengee.imgurl}") %>
     <h2>Challenger points: </h2>
-    <p><%= @challengee_points %></p>
+    <p><%= @newrapbattle.challengee_points %></p>
   </div>
   <div class="three wide column">
   </div>
@@ -37,13 +37,13 @@
   <div class="five wide column">
     <h2>Challenger's TrashTalk</h2>
     <% @challenger_insults.each do |c| %>
-    <p><%= c %></p>
+    <p class="redtext"><%= c %></p>
     <% end %>
   </div>
   <div class="five wide column">
     <h2>Challengee's TrashTalk</h2>
     <% @challengee_insults.each do |c| %>
-    <p><%= c %></p>
+    <p class="redtext"><%= c %></p>
     <% end %>
   </div>
   <div class="three wide column">
