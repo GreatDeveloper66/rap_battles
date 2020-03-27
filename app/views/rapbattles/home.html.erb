@@ -1,5 +1,17 @@
 <%= render partial: "layouts/menu" %>
-
-<h1>Welcome to Rap Battles</h1>
-<h2>Trash talk your favorite rapper</h2>
-<h2>Welcome <%=User.find_by(id: session[:user_id]).name %></h2>
+<div class="ui grid">
+  <div class="two wide column">
+  </div>
+  <div class="tweleve wide column">
+    <h1>Welcome to Rap Battles <%=User.find_by(id: session[:user_id]).name %></h1>
+  </div>
+  <div class="two wide column">
+  </div>
+  <div class="two wide column">
+  </div>
+  <div class="tweleve wide column">
+    <h2>Trash talk your favorite rapper</h2>
+  </div>
+  <div class="two wide column">
+  </div>
+</div>
