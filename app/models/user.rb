@@ -18,7 +18,6 @@ class User < ApplicationRecord
     challenger_points = challenger_array.reduce(0) { |sum,c| sum + c.points }
     challengee_points = challengee_array.reduce(0) { |sum,c| sum + c.points }
 
-
     newrapbattle = Rapbattle.create(
       challenger_id: self.id,
       challengee_id: another_user.id,
