@@ -1,30 +1,44 @@
 <%= render partial: "layouts/menu" %>
 
+<div class="ui grid">
+  <div class="three wide column">
+  </div>
+  <div class="ten wide column">
+    <h1>Previous Rap Battles</h1>
+  </div>
+  <div class="three wide column">
+  </div>
 
-<h1>Previous Rap Battles</h1>
+  <div class="three wide column">
+  </div>
+  <div class="five wide column">
+    <h2>Total number of trashtalks so far: <%=Rapbattle.total_trashtalks%></h2>
+    <br>
+    <h2>Leader with most Trashtalk points is: <%= Rapbattle.find_leader %>
 
-<h2>Total number of trashtalks so far</h2>
-<%=Rapbattle.total_trashtalks%>
+  </div>
+  <div class="five wide column">
+    <h2>Most popular trashtalk is</h2>
+    <p><%= Rapbattle.most_popular_trash %></p>
+  </div>
+  <div class="three wide column">
+  </div>
 
-<h2>Most popular trashtalk is</h2>
 
-<%= Rapbattle.most_popular_trash %>
 
-<% @rapbattles.to_a.each do |r| %>
+<% @rapbattles.to_a.each_with_index do |r,index| %>
+
+
+<div class="eight wide column">
+<h1>Rap Battle <%= "#{index + 1}" %></h1>
 <h2>Challenger: </h2>
-<%= r.challenger.name %>
-<h2>Challenger points: </h2>
-<%=r.challenger_points%>
+<p><%= r.challenger.name %>: <%=r.challenger_points%></p>
 <h2>Challengee: </h2>
-<%=r.challengee.name %>
-<h2>Challengee points: </h2>
-<%=r.challengee_points %>
+<p><%=r.challengee.name %> <%=r.challengee_points %></p>
 <br>
-<br>
-<p>Winner: </p>
-<%= r.winner.name %>
-
+<p>Winner: <%= r.winner.name %> </p>
+</div>
 
 <% end %>
 
-<%= link_to "Back to Home", users_path %>
+</div>

@@ -2,22 +2,26 @@
 
 
 <div class="ui grid">
-  <div class="five wide column"></div>
-  <div class="six wide column">
-    <h1>Battle a Rapper <%=User.find_by(id:session[:user_id]).name%></h1>
-  </div>
-  <div class="five wide column"></div>
-  <div class="five wide column"></div>
-  <div class="six wide column">
 
+  <div class="six wide column"></div>
+  <div class="four wide column">
+
+    Battle a Rapper <%=User.find_by(id:session[:user_id]).name%>
+      
     <%= form_for @rapbattle do |f| %>
-    <%=f.label 'Pick Venue' %>
+
+    <p><%=f.label 'Pick Venue' %></p>
     <%=f.collection_select('venue_id',@venues,'id','name')%>
-    <%=f.label 'Pick Rapper' %>
+
+
+    <p><%=f.label 'Pick Rapper' %></p>
     <%=f.collection_select('id',@rappers,'id','name')%>
 
+
     <%=f.submit%>
+
     <%end%>
+
   </div>
-  <div class="five wide column"></div>
+  <div class="six wide column"></div>
 </div>

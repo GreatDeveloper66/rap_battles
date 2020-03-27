@@ -12,8 +12,8 @@
 
 <% @venues.each do |v| %>
 <div class="eight wide column">
-<p><%= v.name %></p>
-<p><%= v.town.name %></p>
+<p><%= v.name %>: <%= v.town.name %></p>
+
 
 <%=image_tag("#{v.imgurl}") %>
 <p><%= link_to "Edit this venue", edit_venue_path(v) %></p>
