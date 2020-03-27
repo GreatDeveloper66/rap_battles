@@ -2,28 +2,28 @@
   <div class="header item">
     Welcome to Rap Battles
   </div>
-  <a class="item">
+  <button class="ui secondary button">
     <%= link_to 'Home', users_path %>
-  </a>
-  <a class="item">
+  </button>
+  <button class="ui secondary button">
     <%= link_to "See Venues", venues_path %>
-  </a>
-  <a class="item">
+  </button>
+  <button class="ui secondary button">
     <%= link_to "See Cities", towns_path %>
-  </a>
-  <a class="item">
+  </button>
+  <button class="ui secondary button">
     <%= link_to "See Trashtalks", trashtalks_path %>
-  </a>
-  <a class="item">
+  </button>
+  <button class="ui secondary button">
     <%= link_to "See Rapbattles", rapbattles_path %>
-  </a>
-  <a class="item">
+  </button>
+  <button class="ui secondary button">
     <%= link_to "Battle a Rapper", new_rapbattle_path %>
-  </a>
-  <a class="item">
+  </button>
+  <button class="ui secondary button">
     <%= link_to "Profile", edit_user_path(User.find_by(id: session[:user_id])) %>
-  </a>
-  <a class="item">
+  </button>
+  <button class="ui secondary button">
     <%= link_to "Log Out", logout_path, method: :delete %>
-  </a>
+  </button>
 </div>
