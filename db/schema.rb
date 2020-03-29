@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_03_27_095912) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "rapbattles", force: :cascade do |t|
     t.integer "challenger_id"
     t.integer "venue_id"
