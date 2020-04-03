@@ -11,14 +11,18 @@
 
 
 <% @venues.each do |v| %>
-<div class="eight wide column">
-<p><%= v.name %>: <%= v.town.name %></p>
-
-
-<%=image_tag("#{v.imgurl}") %>
-<p><%= link_to "Edit this venue", edit_venue_path(v) %></p>
-<br>
-<br>
+<div class="four wide column">
+  <div class="ui card">
+    <div class="content">
+      <p><%= v.name %>: <%= v.town.name %></p>
+    </div>
+    <div class="image">
+      <%=image_tag("#{v.imgurl}") %>
+    </div>
+    <div class="content">
+      <p><%= link_to "Edit this venue", edit_venue_path(v) %></p>
+    </div>
+  </div>
 </div>
 <% end %>
 

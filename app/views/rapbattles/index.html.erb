@@ -18,13 +18,15 @@
 
 
     <div class="four wide column">
-    <h1>Rap Battle <%= "#{index + 1}" %></h1>
-    <h2>Challenger: </h2>
-    <p><%= r.challenger.name %>: <%=r.challenger_points%></p>
-    <h2>Challengee: </h2>
-    <p><%=r.challengee.name %> <%=r.challengee_points %></p>
-    <br>
-    <p>Winner: <%= r.winner.name %> </p>
+      <div class="ui card">
+        <h1>Rap Battle <%= "#{index + 1}" %></h1>
+        <h2>Challenger: </h2>
+        <p><%= r.challenger.name %>: <%=r.challenger_points%></p>
+        <h2>Challengee: </h2>
+        <p><%=r.challengee.name %>: <%=r.challengee_points %></p>
+        <br>
+        <p>Winner: <%= r.winner.name %> </p>
+      </div>
     </div>
 
     <% end %>
