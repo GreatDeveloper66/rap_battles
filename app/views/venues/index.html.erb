@@ -8,8 +8,6 @@
   <div class="three wide column">
   </div>
 
-
-
 <% @venues.each do |v| %>
 <div class="four wide column">
   <div class="ui card">
@@ -19,9 +17,9 @@
     <div class="image">
       <%=image_tag("#{v.imgurl}") %>
     </div>
-    <div class="content">
+    <!-- <div class="content">
       <p><%= link_to "Edit this venue", edit_venue_path(v) %></p>
-    </div>
+    </div> -->
   </div>
 </div>
 <% end %>

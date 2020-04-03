@@ -1,39 +1,28 @@
 <%= render partial: "layouts/menu" %>
-
 <div class="ui grid">
-  <div class="three wide column">
-  </div>
-  <div class="ten wide column">
-    <h1>Trashtalk List</h1>
-  </div>
-  <div class="three wide column">
-  </div>
-
-  <div class="three wide column">
-  </div>
-  <div class="ten wide column">
-    <h3><%= link_to "Create a new insult", new_trashtalk_path %></h3>
-  </div>
-  <div class="three wide column">
-  </div>
-
-  <% @trashtalks.each do |t| %>
-  <div class = "three wide column">
+  <div class="four column centered row">
+    <div class="column">
+      <h1>TRASHTALK LIST</h1>
     </div>
-    <div class="ten wide column">
-  <br>
-  <h2><%= t.snippet %></h2>
-
-  <p>
-  <%= link_to "Edit this insult", edit_trashtalk_path(t) %>
-  </p>
-  <br>
-  <p>
-  <%= link_to "Delete this insult", trashtalk_path(t)%>
-  </p>
-
-  <br>
-<% end %>
-
-
+  </div>
+  <div class="four column centered row">
+    <div class="column">
+      <h1><%= link_to "Create a new insult", new_trashtalk_path %></h1>
+    </div>
+  </div>
+</div>
+<div class="ui grid">
+  <% @trashtalks.each do |t| %>
+    <div class = "four wide column">
+      <div class="ui card">
+        <h2><%= t.snippet %></h2>
+        <button class="ui green button">
+        <p><%= link_to "Edit this insult", edit_trashtalk_path(t) %></p>
+        </button>
+        <!-- <button class="ui red button">
+        <p><%= link_to "Delete this insult", trashtalk_path(t)%></p>
+        </button> -->
+      </div>
+    </div>
+    <% end %>
 </div>

@@ -1,14 +1,13 @@
 <%= render partial: "layouts/menu" %>
-
 <div class="ui grid">
-  <div class="four wide column">
+  <div class="three column centered row">
+    <div class="column">
+      <h1>Welcome to Rap Battles <%=User.find_by(id: session[:user_id]).name %></h1>
+    </div>
   </div>
-  <div class="twelve wide column">
-    <h1>Welcome to Rap Battles <%=User.find_by(id: session[:user_id]).name %></h1>
-  </div>
-  <div class="four wide column">
-  </div>
-  <div class="twelve wide column">
-    <h2>Trash talk your favorite rapper</h2>
+  <div class="three column centered row">
+    <div class="column">
+      <h2>Trash talk your favorite rapper</h2>
+    </div>
   </div>
 </div>

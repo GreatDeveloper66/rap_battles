@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :username
       t.string :password_digest
+      t.string :imgurl, default: 'blank_person.jpg'
     end
   end
 end
