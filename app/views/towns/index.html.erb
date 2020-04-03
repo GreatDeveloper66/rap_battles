@@ -10,16 +10,27 @@
 
 
   <% @towns.each do |t| %>
-    <div class="eight wide column">
-    <p>City:</p>
-    <p><%= t.name %></p>
-    <%=image_tag("Cities/#{t.imgurl}") %>
-    <%=t.imgurl%>
-    <h2>Venues for this city</h2>
-    <% t.venues.each do |v| %>
+    <div class="four wide column">
+      <div class= "ui card">
+        <div class="content">
+          <div class="left floated">
+            <p>City:</p>
+          </div>
+          <div class="right floated">
+            <p><%= t.name %></p>
+          </div>
+        </div>
+      <div class="image">
+        <%=image_tag("Cities/#{t.imgurl}") %>
+        <%=t.imgurl%>
+      </div>
+    <div class="content">
+      <h2>Venues for this city</h2>
+      <% t.venues.each do |v| %>
       <p><%= v.name %></p>
-    <% end %>
+      <% end %>
+    </div>
+      </div>
     </div>
   <% end %>
-
 </div>

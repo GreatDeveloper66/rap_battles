@@ -1,27 +1,23 @@
 <%= render partial: "layouts/menu" %>
-
-
 <div class="ui grid">
-
-  <div class="six wide column"></div>
-  <div class="four wide column">
-
-    Battle a Rapper <%=User.find_by(id:session[:user_id]).name%>
-      
-    <%= form_for @rapbattle do |f| %>
-
-    <p><%=f.label 'Pick Venue' %></p>
-    <%=f.collection_select('venue_id',@venues,'id','name')%>
-
-
-    <p><%=f.label 'Pick Rapper' %></p>
-    <%=f.collection_select('id',@rappers,'id','name')%>
-
-
-    <%=f.submit%>
-
-    <%end%>
-
+  <div class="four column centered row">
+    <div class="column">
+      <h1>Battle a Rapper <%=User.find_by(id:session[:user_id]).name%></h1>
+    </div>
   </div>
-  <div class="six wide column"></div>
+  <div class="four column centered row">
+    <div class="column">
+      <div class="ui blue card">
+        <div class="content">
+        <%= form_for @rapbattle do |f| %>
+        <p><%=f.label 'Pick Venue' %></p>
+        <%=f.collection_select('venue_id',@venues,'id','name')%>
+        <p><%=f.label 'Pick Rapper' %></p>
+        <%=f.collection_select('id',@rappers,'id','name')%>
+        <%=f.submit%>
+        <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

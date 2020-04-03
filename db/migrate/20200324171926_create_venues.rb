@@ -4,6 +4,7 @@ class CreateVenues < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :points
       t.integer :town_id
+      t.string :imgurl
     end
   end
 end
