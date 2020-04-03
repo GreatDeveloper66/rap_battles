@@ -15,10 +15,12 @@
  */
 
  body {
-   background-image:url('rap_background_alt.jpg');
+   background-color: yellow;
+   background-image:url('https://www.dropbox.com/s/1qqq5wi78ec4oq7/rap_background_alt.jpg?raw=1');
    background-size: cover;
    background-position: center;
    background-repeat: none;
+
    color: white;
  }
 
