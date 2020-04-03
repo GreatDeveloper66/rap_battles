@@ -11,6 +11,7 @@
 
   <% @towns.each do |t| %>
     <div class="eight wide column">
+      <div class= "ui card">
     <p>City:</p>
     <p><%= t.name %></p>
     <%=image_tag("Cities/#{t.imgurl}") %>
@@ -19,6 +20,7 @@
     <% t.venues.each do |v| %>
       <p><%= v.name %></p>
     <% end %>
+      </div>
     </div>
   <% end %>
 
