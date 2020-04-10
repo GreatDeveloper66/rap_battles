@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       redirect_to users_path
     else
       @user = User.new
+      flash[:error] = "Invalid credentials"
       render :new
     end
   end

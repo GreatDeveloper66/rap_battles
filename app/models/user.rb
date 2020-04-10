@@ -5,7 +5,14 @@ class User < ApplicationRecord
   has_many :challengers, through: :challenging_users
   has_secure_password
 
-  validates_uniqueness_of :username
+  # //validates :email, uniqueness: true
+  # //validates :
+  validates :name, :presence => true
+  validates :username, :presence => true
+  validates :email, :presence => true
+  validates :name, :uniqueness => true
+  validates :username, :uniqueness => true
+  validates :email, :uniqueness => true
 
   def challenge(another_user, fight_at_venue)
     challenger_array = Trashtalk.sample_trashtalk
