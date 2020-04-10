@@ -11,9 +11,10 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to users_path
     else
-      @user = User.new
-      flash[:error] = "Invalid credentials"
-      render :new
+      # flash[:alert] = @user.returnerrors
+      # @errors = flash[:error]
+      # render :@errors
+      redirect_to new_user_path, alert: @user.returnerrors
     end
   end
   def edit

@@ -31,9 +31,11 @@
       <button><%= link_to 'Back',home_path %></button>
     </div>
   </div>
-  <div class="twelve column centered row">
+  <div class="five column centered row">
     <div class="column">
-      <p><%= "#{error}" %></p>
+      <div class="ui negative message">
+          <%= "#{ error }" %>
+      </div>
     </div>
   </div>
 

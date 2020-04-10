@@ -35,4 +35,15 @@ class User < ApplicationRecord
     end
     newrapbattle.id
   end
+
+  def returnerrors
+    errorObj = {
+      name: "Name Errors: #{self.errors.messages[:name].join(' and ')}",
+      username: "User Name Errors: #{self.errors.messages[:username].join(' and ')}",
+      email: "Email Errors: #{self.errors.messages[:email].join(' and ')}"
+    }
+
+    "#{errorObj[:name]} #{errorObj[:username]} #{errorObj[:email]}"
+
+  end
 end
