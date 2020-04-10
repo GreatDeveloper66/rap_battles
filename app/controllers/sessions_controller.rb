@@ -14,8 +14,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to users_path
     else
-      flash[:error] = "Invalid credentials"
-      redirect_to login_path
+        redirect_to login_path, alert: user.returnerrors
     end
   end
   def home

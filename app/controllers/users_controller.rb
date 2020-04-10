@@ -11,9 +11,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to users_path
     else
-      # flash[:alert] = @user.returnerrors
-      # @errors = flash[:error]
-      # render :@errors
       redirect_to new_user_path, alert: @user.returnerrors
     end
   end
@@ -25,7 +22,7 @@ class UsersController < ApplicationController
     if User.update(user_params)
       redirect_to users_path
     else
-      render :edit
+      redirect_to edit_user_path, alert: @user.returnerrors
     end
   end
   def index

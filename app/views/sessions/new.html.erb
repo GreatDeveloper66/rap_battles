@@ -6,8 +6,6 @@
     </div>
   <div class="twelve column centered row">
     <div class="column">
-      <%= flash[:error] %>
-
       <%= form_with url: "/sessions" do %>
         <p>Username
         <%= text_field_tag :username %>
@@ -24,4 +22,10 @@
       <button><%= link_to 'Back',home_path %></button>
     </div>
   </div>
+  <div class="five column centered row">
+    <div class="column">
+      <div class="ui negative message">
+          <%= "#{ flash[:alert] }" %>
+      </div>
+    </div>
   </div>
